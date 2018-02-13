@@ -45,9 +45,10 @@ app.post('/', function(req, res, next) {
 //Database connection
 app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
-	  	host     : 'localhost',
-	  	user     : 'root',
-  		database : 'eyemenu'
+	  	host     : '159.65.22.131',
+	  	user     : 'EyeMenuDev',
+      password : 'Pa55word1',
+  		database : 'EyeMenu'
 	});
 	connection.connect();
 	next();
