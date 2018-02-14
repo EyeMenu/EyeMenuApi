@@ -12,8 +12,9 @@ var cors = require('cors');
 var index = require('./routes/index');
 var Servers = require('./routes/Servers');
 var Login = require('./routes/Login');
-var Post = require('./routes/Post');
-var Passwords = require('./routes/Passwords');
+var FreeTables = require('./routes/FreeTables');
+var MenuGet = require('./routes/MenuGet');
+var CourseSort = require('./routes/CourseSort');
 
 var app = express();
 
@@ -53,11 +54,11 @@ app.use(function(req, res, next){
 	connection.connect();
 	next();
 });
-//app.use('/', index);
 app.use('/api/v1/Servers', Servers);
-app.use('/api/v1/Passwords', Passwords);
-app.use('/api/v1/Post', Post);
 app.use('/api/v1/Login', Login);
+app.use('/api/v1/FreeTables', FreeTables);
+app.use('/api/v1/MenuGet', MenuGet);
+app.use('/api/v1/CourseSort', CourseSort);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
